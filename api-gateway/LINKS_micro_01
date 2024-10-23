@@ -1,0 +1,41 @@
+links:
+
+eureka::8761
+http://localhost:8761/
+
+api gateway: 8765
+
+*********spring.cloud.gateway.discovery.locator.enabled=true *****
+It will helps to use the mervices that are registred with eureka server.
+
+currency-conversion::
+http://localhost:8765/CURRENCY-CONVERSION/currency-conversion/feign/from/CAD/to/INR/quantity/10
+currency-exchange::
+http://localhost:8765/CURRENCY-EXCHANGE/currency-exchange/from/EUR/to/INR
+
+
+*****spring.cloud.gateway.discovery.locator.lower-case-service-id=true**********
+#It when you add it in apigateway properties instead of using capital letter of service.
+
+http://localhost:8765/currency-exchange/currency-exchange/from/EUR/to/INR
+
+http://localhost:8765/currency-conversion/currency-conversion/feign/from/CAD/to/INR/quantity/10
+
+http://localhost:8765/currency-conversion/currency-conversion/rest/from/CAD/to/INR/quantity/10
+
+*******************route***************
+http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/30
+http://localhost:8765/currency-conversion/feign/from/CAD/to/INR/quantity/10
+http://localhost:8765/currency-conversion/rest/from/CAD/to/INR/quantity/10
+http://localhost:8765/currency-exchange/from/EUR/to/INR
+
+currency-exchange::8000
+http://localhost:8001/currency-exchange/from/EUR/to/INR
+
+currency-conversion::8100
+http://localhost:8100/currency-conversion/rest/from/EUR/to/INR/quantity/200
+http://localhost:8100/currency-conversion/feign/from/AUS/to/INR/quantity/10
+
+
+
+
